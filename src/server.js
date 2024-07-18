@@ -1,20 +1,18 @@
 import express from "express";
 import morgan from "morgan";
+import centerRouter from "./routers/centerRouter";
+import userRouter from "./routers/userRouter";
 
 const PORT = 4000;
 const app = express();
 
-const home = (req, res) => {
-    return res.send("home");
-};
-
-const login = (req, res) => {
-    return res.send("login");
-};
-
+app.set("view engine", "pug");//html대신 pug사용
+app.set("views", process.cwd() + "/src/views");
 app.use(morgan("dev"));
-app.get("/", home);
-app.get("/login", login);
+app.use(express.static(process.cwd() + "/src"));
+app.use("/", centerRouter);
+app.use("/user", userRouter);
+
 
 const handleListening = () => console.log(`Server listenting on port http://localhost:${PORT} 🔥`);
 
