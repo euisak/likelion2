@@ -1,0 +1,49 @@
+label {
+    margin-right: 20px;
+}
+.image-set {
+    display: none;
+}
+.image-set.active {
+    display: block;
+}
+img {
+    max-width: 300px;
+    height: auto;
+}
+#slider {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%;
+  }
+
+  .slides img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .indicator.active {
+    background-color: black;
+  }
