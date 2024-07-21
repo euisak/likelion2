@@ -1,0 +1,20 @@
+.faqIcon{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: #80c4e9;
+    border: solid #ff7f3e 3px;
+    border-radius: 50%;
+    font-weight: 600;
+}
+.faqIcon:hover{
+    cursor: pointer;
+    background-color: #ff7f3e;
+    border: solid #80c4e9 3px;
+}

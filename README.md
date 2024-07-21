@@ -6,13 +6,14 @@
 /community -> 커뮤니티
 /login -> 로그인
 /join -> 회원가입
+/faq -> 자주묻는 질문
 
 2. userRouter
 /users/개별id -> 마이페이지
 /users/edit -> 개인정보수정
 
 
-3. storeRouter
+3. storeRouter(완료)
 /store/best -> /쇼핑/베스트
 /store/fashion -> /쇼핑/패션
 /store/equipment -> /쇼핑/기구

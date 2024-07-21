@@ -1,23 +1,6 @@
-doctype html
-html(lang="ko")
-    head
-        title Health in | 헬스인
-        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
-        link(rel="stylesheet", href="/frontend/css/reset.css")
-        link(rel="stylesheet", href="/frontend/css/home.css")
-        script(src="/frontend/js/home.js")
-    body
-        header.home-header
-            div.home-header_left
-                img(src='/image/logo.jpg' alt='Logo')
-                div 홈
-                div 쇼핑
-                div 챌린지
-                div 커뮤니티
-            div.home-header_right 
-                div 로그인
-                div 회원가입
-        div.home-header-line
+extends header.pug
+
+block content
         div.monthly-news
             div
                 div.monthly-news_title 이달의 소식
