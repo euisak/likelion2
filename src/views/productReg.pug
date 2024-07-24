@@ -1,0 +1,55 @@
+extends header.pug
+
+block content
+    div.productReg-Title
+        div 상품 등록
+    div.productReg-content
+        div.productReg-content_left
+            a(href="/admin/mySales")
+                div.productReg-content_mySales
+                    span 나의 판매
+                    span 
+                        i(class="fa-solid fa-chevron-right")
+            a(href="/admin/productReg")
+                div.productReg-content_productReg
+                    span 상품 등록
+                    span 
+                        i(class="fa-solid fa-chevron-right")
+        div.productReg-content_right
+            div.productReg-content_productName
+                div 상품명
+                div
+                    input(name="productName" type="text")
+            div.productReg-content_level
+                div 카테고리
+                div
+                    select(name="firstLevel")
+                        option(value="fashion") 패션
+                        option(value="equipment") 기구
+                        option(value="food") 식품
+            div.productReg-content_seller
+                div 판매자
+                div
+                    input(name="seller" type="text")
+            div.productReg-content_price
+                div 판매가
+                div
+                    input(name="price" type="text" onkeyup="inputNumberFormat(this);")
+            div.productReg-content_discount
+                div 할인율
+                div
+                    input(name="discount" type="text")
+            div.productReg-content_thumbnail
+                div 썸네일
+                div
+                    input(name="thumbnail" type="file" accept="image/png, image/jpeg")
+            div.productReg-content_productImage
+                div 사진등록
+                div
+                    input(name="productImage" type="file" accept="image/png, image/jpeg")
+            div.productReg-content_productDescription
+                div 상품설명
+                div
+                    textarea(name="productDescription") 
+            div.productReg-content_button
+                input(type="submit" value="등록")

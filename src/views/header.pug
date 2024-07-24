@@ -1,0 +1,32 @@
+doctype html
+html(lang="ko")
+    head
+        title Health in | 헬스인
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+        link(rel="stylesheet", href="/frontend/css/style.css")
+        script(src="/frontend/js/header.js")
+        script(src="/frontend/js/home.js")
+        script(src="/frontend/js/storeNewest.js")
+        script(src="/frontend/js/productReg.js")
+    body
+        include partials/faqIcon.pug
+        header.home-header
+            div.home-header_left
+                img(src='/image/logo.jpg' alt='Logo')
+                a.home-header_nav-links(href="/" data-id="home")
+                    span 홈
+                a.home-header_nav-links(href="/store/newest" data-id="store")
+                    span 쇼핑
+                a.home-header_nav-links(href="#" data-id="challenge")
+                    span 챌린지
+                a.home-header_nav-links(href="#" data-id="community")
+                    span 커뮤니티
+                //-관리자페이지 들어가기 위한 임시 버튼
+                a.home-header_nav-links(href="/admin/mySales" data-id="adminpage")
+                    span 관리자페이지
+            div.home-header_right 
+                div 로그인
+                div 회원가입
+        div.home-header-line
+        block content

@@ -1,0 +1,12 @@
+/*반복*/
+@import "./components/header.css";
+@import "./components/reset.css";
+@import "./components/faqIcon.css";
+
+/*화면별*/
+@import "./home.css";
+@import "./storeNewest.css";
+@import "./storeFashion.css";
+@import "./faq.css";
+@import "./mySales.css";
+@import "./productReg.css";

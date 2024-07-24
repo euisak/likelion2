@@ -1,0 +1,164 @@
+extends header.pug
+
+block content
+        div.monthly-news
+            div
+                div.monthly-news_title 이달의 소식
+                div.monthly-news_day
+            //-달력API 삽입 예정
+            div
+        div.best-product
+            div.best-product_title 베스트 상품
+            div.best-product_menu
+                div
+                    label
+                        input(type="radio" name="imageSet" value="set1" checked)
+                        span 전체
+                div
+                    label
+                        input(type="radio" name="imageSet" value="set2")
+                        span 패션
+                div
+                    label
+                        input(type="radio" name="imageSet" value="set3")
+                        span 기구
+                div
+                    label
+                        input(type="radio" name="imageSet" value="set4")
+                        span 식품
+                
+            div#set1.best-product_image-set
+                div.best-product_image-set2
+                    div.best-product_image-set3
+                        img(src="/image/상품-안다르1.jpg")
+                        div.best-product_image-set_text
+                            div 안다르
+                            div [1+1] 에어쿨링 지니 시그니처 레깅스
+                            div 
+                                div 50%
+                                div 49,000
+                    div.best-product_image-set3
+                        img(src="/image/상품-안다르1.jpg")
+                        div.best-product_image-set_text
+                            div 안다르
+                            div [1+1] 에어쿨링 지니 시그니처 레깅스
+                            div 
+                                div 50%
+                                div 49,000
+                    div.best-product_image-set3
+                        img(src="/image/상품-안다르1.jpg")
+                        div.best-product_image-set_text
+                            div 안다르
+                            div [1+1] 에어쿨링 지니 시그니처 레깅스
+                            div 
+                                div 50%
+                                div 49,000
+
+            div#set2.best-product_image-set
+                div.best-product_image-set2
+                    div.best-product_image-set3
+                        img(src="/image/상품-젝시믹스1.jpg")
+                        div.best-product_image-set_text
+                            div 젝시믹스
+                            div [1+1] 젤라 인텐션 바이커 쇼츠 5부
+                            div 
+                                div 51%
+                                div 34,800
+                    div.best-product_image-set3
+                        img(src="/image/상품-젝시믹스1.jpg")
+                        div.best-product_image-set_text
+                            div 젝시믹스
+                            div [1+1] 젤라 인텐션 바이커 쇼츠 5부
+                            div 
+                                div 51%
+                                div 34,800
+                    div.best-product_image-set3
+                        img(src="/image/상품-젝시믹스1.jpg")
+                        div.best-product_image-set_text
+                            div 젝시믹스
+                            div [1+1] 젤라 인텐션 바이커 쇼츠 5부
+                            div 
+                                div 51%
+                                div 34,800
+
+            div#set3.best-product_image-set
+                div.best-product_image-set2
+                    div.best-product_image-set3
+                        img(src="/image/상품-샤오미1.jpg")
+                        div.best-product_image-set_text
+                            div 샤오미
+                            div 접이식 워킹패드 A1 PRO 런닝머신
+                            div 
+                                div 22%
+                                div 329,000
+                    div.best-product_image-set3
+                        img(src="/image/상품-샤오미1.jpg")
+                        div.best-product_image-set_text
+                            div 샤오미
+                            div 접이식 워킹패드 A1 PRO 런닝머신
+                            div 
+                                div 22%
+                                div 329,000
+                    div.best-product_image-set3
+                        img(src="/image/상품-샤오미1.jpg")
+                        div.best-product_image-set_text
+                            div 샤오미
+                            div 접이식 워킹패드 A1 PRO 런닝머신
+                            div 
+                                div 22%
+                                div 329,000
+                
+            div#set4.best-product_image-set
+                div.best-product_image-set2
+                    div.best-product_image-set3
+                        img(src="/image/식품-1.jpg")
+                        div.best-product_image-set_text
+                            div 블루다이아몬드
+                            div 아몬드 브리즈 뉴트리 플러스 프로틴, 190ml
+                            div 
+                                div 53%
+                                div 16,640
+                    div.best-product_image-set3
+                        img(src="/image/식품-1.jpg")
+                        div.best-product_image-set_text
+                            div 블루다이아몬드
+                            div 아몬드 브리즈 뉴트리 플러스 프로틴, 190ml
+                            div 
+                                div 53%
+                                div 16,640
+                    div.best-product_image-set3
+                        img(src="/image/식품-1.jpg")
+                        div.best-product_image-set_text
+                            div 블루다이아몬드
+                            div 아몬드 브리즈 뉴트리 플러스 프로틴, 190ml
+                            div 
+                                div 53%
+                                div 16,640
+        div.challenge-popularPosts
+            div.challenge
+                div.challenge_title 챌린지
+                div#slider
+                    div.challenge_slides
+                        img(src="/image/챌린지1.jpg")
+                        img(src="/image/챌린지1.jpg")
+                        img(src="/image/챌린지1.jpg")
+                        img(src="/image/챌린지1.jpg")
+                div.indicators
+                    span.indicator.active(data-index="0")
+                    span.indicator(data-index="1")
+                    span.indicator(data-index="2")
+                    span.indicator(data-index="3")
+            div.popularPosts
+                div.popularPosts_title 인기 게시물🔥
+                //-게시물 리스트 입력
+        div.other-information
+            div.other-information_text
+                div 이용약관 | 개인정보 처리방침 | 공지사항
+                div (주)멋2있네 | 전라남도 순천시 중앙로 255
+            div.other-information_download
+                div.other-information_download_apple
+                    img(src="/image/icon/애플로고.png")
+                    sapn APP STROE
+                div.other-information_download_google
+                    img(src="/image/icon/구글로고.png")
+                    span GOOGLE PLAY
