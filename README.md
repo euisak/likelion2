@@ -11,6 +11,7 @@
 2. userRouter
 /users/개별id -> 마이페이지
 /users/edit -> 개인정보수정
+/users/logout -> 로그아웃
 
 3. adminRouter
 /admin/개별id/mySales -> 관리자페이지(나의 판매)
@@ -21,4 +22,5 @@
 /store/fashion -> /쇼핑/패션
 /store/equipment -> /쇼핑/기구
 /store/food -> /쇼핑/식품
+/store/개별id/details -> 제품별 상세정보
 
