@@ -44,4 +44,47 @@
 .store-new-date{
   font-size: 15px;
   color: rgb(171, 171, 171);
+  margin-bottom: 20px;
+}
+/*상품 목록*/
+.store-new-item{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 20px;
+}
+.store-new-item_set img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+  .store-new-item {
+    grid-template-columns: 1fr;
+  }
+}
+.store-new-item_set_info div:first-child{
+  font-size: 13px;
+  color: rgb(188, 188, 188);
+}
+.store-new-item_set_info div:nth-child(2){
+  margin: 5px 0px;
+  font-size: 18px;
+  color: #2f3438;
+  line-height: 130%;
+}
+.store-new-item_set_info div:last-child{
+  display: flex;
+  align-items: center;
+}
+.store-new-item_set_info div:last-child div:first-child{
+  font-size: 25px;
+  color: #ff7f3e;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.store-new-item_set_info div:last-child div:last-child{
+  font-size: 25px;
+  color:#2f3438;
+  font-weight: 600;
 }

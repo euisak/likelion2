@@ -1,0 +1,47 @@
+extends header.pug
+
+block content
+    div.headerbar-sub
+        ul.headerbar-sub_list
+            a(href="/store/newest")
+                li 최신 상품
+            a(href="/store/fashion")
+                li 패션
+            a(href="/store/equipment")
+                li 기구
+            a(href="/store/food")
+                li 식품
+    div.home-header-line
+    //-사진 및 정보는 임시 입력(사용자가 상품등록에서 입력한 정보 끌어올 예정)
+    div.store-details
+        div.store-details_img
+            div.store-details_img_big
+                img(src="/image/상품-안다르1.jpg")
+            div.store-details_img_small
+                img(src="/image/상품-안다르1.jpg")
+                img(src="/image/상품-안다르2.jpg")
+                img(src="/image/상품-안다르3.jpg")
+                img(src="/image/상품-안다르4.jpg")
+        div.store-details_info
+            div.store-details_info_company 안다르
+            div.store-details_info_title [1+1] 에어쿨링 지니 시그니처 레깅스
+            div.store-details_info_star
+                span 4.8
+                span ⭐⭐⭐⭐⭐
+            div.store-details_info_delivery
+                div 배송
+                div
+                    div 무료배송
+                    div 7월 29일(월) 도착 예정
+                    div 배송사: 멋사택배
+                    div 제주도/도서산간지역 3,000원
+            div.store-details_info_orderAmount
+                div 주문금액
+                div
+                    //-개수 +, - 버튼 추가 예정
+                    div
+                    //-가격*개수 나타낼 예정
+                    div 
+            div.store-details_info_button
+                input(type="submit" name="cart" value="장바구니")
+                input(type="submit" name="purchase" value="바로구매")

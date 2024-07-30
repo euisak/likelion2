@@ -1,7 +1,7 @@
 doctype html
 html(lang="ko")
     head
-        title Health in | 헬스인
+        title #{pageTitle} | Health in
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
         link(rel="stylesheet", href="/frontend/css/style.css")
@@ -9,6 +9,13 @@ html(lang="ko")
         script(src="/frontend/js/home.js")
         script(src="/frontend/js/storeNewest.js")
         script(src="/frontend/js/productReg.js")
+        //-캘린더(김의윤)
+        link(rel='stylesheet', href='/fullcalendar/main.css')
+        link(rel='stylesheet', href='/style.css')
+        script(src='/jquery/dist/jquery-3.7.1.min.js')
+        script(src='/fullcalendar/main.js')
+        script(src='/javascripts/main.js')
+
     body
         include partials/faqIcon.pug
         header.home-header
@@ -25,8 +32,18 @@ html(lang="ko")
                 //-관리자페이지 들어가기 위한 임시 버튼
                 a.home-header_nav-links(href="/admin/mySales" data-id="adminpage")
                     span 관리자페이지
-            div.home-header_right 
-                div 로그인
-                div 회원가입
+            div.home-header_right
+                if loggedIn
+                    div.header-profile
+                        a(href=`/user/${loggedInUser._id}`)
+                            span #{loggedInUser.username}
+                            span 님 환영합니다!
+                        a(href=`/user/logout`)  | 로그아웃
+                else
+                    div.header-login
+                        a(href="/login")
+                            span 로그인
+                        a(href="/join")
+                            span 회원가입
         div.home-header-line
         block content

@@ -1,6 +1,5 @@
 /*이달의 소식*/
 .monthly-news{
-  display: flex;
   margin-top: 20px;
 }
 .monthly-news div:first-child{
@@ -13,13 +12,6 @@
   color: #2f3438;
   margin: 15px 0px 25px 0px;
 }
-.monthly-news_day{
-  font-size: 18px;
-  font-weight: 600;
-  color: #616467;
-  margin: 15px 0px 25px 5px;
-}
-
 /*베스트 상품*/
 .best-product{
   margin-top: 30px;

@@ -1,8 +1,9 @@
 import express from "express";
-import { seeUser, editUser } from "../controller.js/userController";
+import { logout, seeUser, editUser } from "../controller.js/userController";
 
 const userRouter = express.Router();
 
+userRouter.get("/logout", logout)//로그아웃
 userRouter.get("/:id", seeUser);//마이페이지
 userRouter.get("/:id/edit", editUser);//개인정보수정
 
