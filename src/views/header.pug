@@ -27,11 +27,8 @@ html(lang="ko")
                     span 쇼핑
                 a.home-header_nav-links(href="#" data-id="challenge")
                     span 챌린지
-                a.home-header_nav-links(href="#" data-id="community")
+                a.home-header_nav-links(href="/post" data-id="community")
                     span 커뮤니티
-                //-관리자페이지 들어가기 위한 임시 버튼
-                a.home-header_nav-links(href="/admin/mySales" data-id="adminpage")
-                    span 관리자페이지
             div.home-header_right
                 if loggedIn
                     div.header-profile
@@ -47,3 +44,4 @@ html(lang="ko")
                             span 회원가입
         div.home-header-line
         block content
+        block scripts

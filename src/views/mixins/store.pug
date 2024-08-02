@@ -1,0 +1,13 @@
+mixin product(product)
+    div.store-new-item
+        a(href=`/store/${product.id}/details`)
+            div.store-new-item_set
+                div.store-new-item_set_img(style=`background-image:url(${product.thumbnail.replace(/^\/store/, '')});`)
+                div.store-new-item_set_info
+                    div #{product.seller}
+                    div #{product.productName}
+                    div 
+                        div=`${product.discount}%`
+                        div=product.price.toLocaleString('en-US')
+
+

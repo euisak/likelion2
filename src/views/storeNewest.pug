@@ -1,4 +1,5 @@
 extends header.pug
+include mixins/store
 
 block content
     div.headerbar-sub
@@ -15,32 +16,8 @@ block content
     div.stroe-new
         div 최신 상품
     div.store-new-date
-    //-판매자가 상품을 등록할 수 있도록 변경할 예정
-    div.store-new-item
-        a(href="/store/details")
-            div.store-new-item_set
-                img(src="/image/상품-안다르1.jpg")
-                div.store-new-item_set_info
-                    div 안다르
-                    div [1+1] 에어쿨링 지니 시그니처 레깅스
-                    div 
-                        div 50%
-                        div 49,000
-        a(href="/store/details")
-            div.store-new-item_set
-                img(src="/image/상품-안다르1.jpg")
-                div.store-new-item_set_info
-                    div 안다르
-                    div [1+1] 에어쿨링 지니 시그니처 레깅스
-                    div 
-                        div 50%
-                        div 49,000
-        a(href="/store/details")
-            div.store-new-item_set
-                img(src="/image/상품-안다르1.jpg")
-                div.store-new-item_set_info
-                    div 안다르
-                    div [1+1] 에어쿨링 지니 시그니처 레깅스
-                    div 
-                        div 50%
-                        div 49,000
+    div.store-new-product
+        each product in products
+            +product(product)
+        else
+            li 등록된 상품이 없습니다.

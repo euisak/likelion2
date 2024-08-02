@@ -1,14 +1,14 @@
+import session from "express-session";
 import dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
 import path from "path";
 import mongoose from "mongoose";
 import MongoStore from "connect-mongo";
-import session from "express-session";
 import centerRouter from "./routers/centerRouter";
 import userRouter from "./routers/userRouter";
 import storeRouter from "./routers/storeRouter";
-import adminRouter from "./routers/adminRouter";
+import postRouter from "./routers/postRouter";
 import {localsMiddleware} from "./middlewares";
 
 import "./models/User";
@@ -21,12 +21,6 @@ const PORT = 4000;
 const app = express();
 const db = mongoose.connection;
 
-app.set("view engine", "pug");//html대신 pug사용
-app.set("views", process.cwd() + "/src/views");
-
-app.use(express.static(path.join(process.cwd(), "src/public")));
-app.use(morgan("dev"));
-app.use(express.static(process.cwd() + "/src"));
 app.use(
     session({
         secret: process.env.COOKIE_SECRET,
@@ -35,6 +29,14 @@ app.use(
         store: MongoStore.create({mongoUrl: process.env.DB_URL}),
     })
 );
+
+app.set("view engine", "pug");//html대신 pug사용
+app.set("views", process.cwd() + "/src/views");
+
+app.use(express.static(path.join(process.cwd(), "src/public")));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(morgan("dev"));
+app.use(express.static(process.cwd() + "/src"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -42,7 +44,7 @@ app.use(localsMiddleware);
 app.use("/", centerRouter);
 app.use("/user", userRouter);
 app.use("/store", storeRouter);
-app.use("/admin", adminRouter);
+app.use("/post", postRouter);
 
 
 const handleListening = () => console.log(`Server listenting on port http://localhost:${PORT} 🔥`);

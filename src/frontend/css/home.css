@@ -185,3 +185,32 @@
   width: 25px;
   margin-right: 10px;
 }
+
+/*인기게시물*/
+.top-posts_list{
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.top-posts_list_category{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 17px;
+  padding: 3px;
+  margin-right: 10px;
+  font-size: 12px;
+  background-color: white;
+  color: #94969b;
+  border: solid 1px #eeeeee;
+}
+.top-posts_list_title-like{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.top-posts_list_title{
+  color: black;
+  font-size: 15px;
+}

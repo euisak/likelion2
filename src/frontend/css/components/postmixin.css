@@ -1,0 +1,20 @@
+.postmixin{
+    width: 100%;
+    height: 80px;
+}
+.postmixin_head{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+.postmixin_head_prefix{
+    padding: 5px;
+    background-color: white;
+    color: #94969b;
+    border: solid 2px #eeeeee;
+}
+.postmixin_head_title{
+    margin: 0px 20px 0px 10px;
+}

@@ -1,9 +1,28 @@
 import User from "../models/User";
+import Post from "../models/post";
 import bcrypt from "bcrypt";
 
 //[홈]
-export const home = (req,res)=> {
-    return res.render("home", {pageTitle: "헬스인"})
+export const home = async(req,res)=> {
+    try {
+        // 상위 5개의 게시글을 조회합니다.
+        const top5Posts = await Post.find({})
+          .sort({ 'meta.like': -1 }) // 좋아요 수를 기준으로 내림차순 정렬
+          .limit(5)
+          .exec();
+    
+        // 홈 페이지를 렌더링합니다.
+        return res.render("home", {
+          pageTitle: "헬스인",
+          top5Contents: top5Posts
+        });
+      } catch (error) {
+        console.error("Error fetching top 5 posts:", error);
+        return res.render("home", {
+          pageTitle: "헬스인",
+          top5Contents: []
+        });
+      }
 };
 
 //[회원가입]
@@ -74,6 +93,7 @@ export const postLogin = async(req,res)=> {
     }
     req.session.loggedIn = true;
     req.session.user = user;
+    console.log(req.session.user);
     return res.redirect("/");
 }
 

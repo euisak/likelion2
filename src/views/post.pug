@@ -1,0 +1,15 @@
+extends header.pug
+include mixins/postmixin
+
+block content
+  nav 
+    ul.upload-community
+      if(loggedInUser)
+        li
+            a(href="/upload") 글쓰기
+
+  div.upload-community-content
+    each post in posts
+      +post(post)
+    else
+      li Sorry, nothing found.

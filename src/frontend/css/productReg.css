@@ -39,9 +39,10 @@
 }
 .productReg-content_right{
     width: 780px;
-    height: 550px;
+    height: 680px;
     border: solid #cfcfcf 1px;
     padding: 5px;
+    margin-left: 40px;
 }
 .productReg-content_right>form>div{
     width: 100%;
@@ -65,13 +66,19 @@
     display: flex;
     align-items: center;
 }
+.productReg-content_seller input{
+    border: black solid 1px;
+    background-color: rgb(232, 232, 232);
+}
+.productReg-content_seller input:focus{
+    outline: none;
+}
 .productReg-content_productImage div{
     padding: 10px 10px;
 }
 .productReg-content_productImage_fileList ul{
     width: 500px;
     height: 100px;
-    margin-top: 10px;
     padding: 10px;
     background-color: #ebebeb;
     border-radius: 10px;
@@ -81,12 +88,21 @@
     font-size: 13px;
     padding: 3px 0px;
 }
+.productReg-content_productImage_fileList div{
+    font-size: 12px;
+    color: red;
+    padding: 5px 0px;
+}
 .productReg-content_right>form>div input[type="text"]{
     height: 30px;
     width: 500px;
 }
 .productReg-content_productDescription div:first-child{
     padding: 10px 10px 60px 10px;
+}
+.productReg-content_productDescription div:last-child{
+    display: flex;
+    align-items: start;
 }
 .productReg-content_productDescription textarea{
     height: 90px;
