@@ -4,14 +4,19 @@ block content
     div.productReg-Title
         div 상품 등록
     div.productReg-content
-        div.productReg-content_left
-            a(href="/admin/mySales")
-                div.productReg-content_mySales
+        div.adminPage-content_left
+            a(href=`/user/${user._id}`)
+                div.adminPage-content_myprofile
+                    span 마이페이지
+                    span 
+                        i(class="fa-solid fa-chevron-right")
+            a(href=`/user/${user._id}/mySales`)
+                div.adminPage-content_mySales
                     span 나의 판매
                     span 
                         i(class="fa-solid fa-chevron-right")
-            a(href="/admin/productReg")
-                div.productReg-content_productReg
+            a(href=`/user/${user._id}/productReg`)
+                div.adminPage-content_productReg
                     span 상품 등록
                     span 
                         i(class="fa-solid fa-chevron-right")
@@ -33,7 +38,7 @@ block content
                 div.productReg-content_seller
                     div 판매자
                     div
-                        input(name="seller" type="text" required)
+                        input(name="seller" type="text" value=user.username readonly required)
                 div.productReg-content_price
                     div 판매가
                     div
@@ -50,7 +55,8 @@ block content
                     div 사진등록
                     div.productReg-content_productImage_fileList
                         input(name="productImage" type="file" id="productImage" accept="image/png, image/jpeg" required)
-                        ul#productImage-fileList
+                        input(name="productImage" type="file" id="productImage" accept="image/png, image/jpeg" required)
+                        input(name="productImage" type="file" id="productImage" accept="image/png, image/jpeg" required)
                 div.productReg-content_productDescription
                     div 상품설명
                     div

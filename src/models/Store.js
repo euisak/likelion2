@@ -9,6 +9,12 @@ const storeSchema = new mongoose.Schema({
     thumbnail: {type: String, required: true},
     productImage: [{type: String, required: true}],
     productDescription: {type: String, required: true},
+    createdAt: {type: String,  required: true},
+    owner: {type: mongoose.Schema.Types.ObjectId, ref: "User", required: true}
+});
+
+storeSchema.static("createAtSave", function(today){
+	return today.toLocaleDateString();
 });
 
 const Store = mongoose.model("Store", storeSchema);

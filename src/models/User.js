@@ -8,9 +8,10 @@ const userSchema = new mongoose.Schema({
     email: {type: String, unique: true},
     userType: {
         type: String,
-        enum: ["구매자(일반 회원)", "판매자"],
+        enum: ["구매자", "판매자"],
         required: true
     },
+    products: [{type: mongoose.Schema.Types.ObjectId, ref: "Store"}],
 });
 
 userSchema.pre("save", async function() {

@@ -16,32 +16,36 @@ block content
     div.store-details
         div.store-details_img
             div.store-details_img_big
-                img(src="/image/상품-안다르1.jpg")
+                img#productThumbnail(src="/" + product.thumbnail)
             div.store-details_img_small
-                img(src="/image/상품-안다르1.jpg")
-                img(src="/image/상품-안다르2.jpg")
-                img(src="/image/상품-안다르3.jpg")
-                img(src="/image/상품-안다르4.jpg")
+                img.productImage(src="/" + productImage[0])
+                img.productImage(src="/" + productImage[1])
+                img.productImage(src="/" + productImage[2])
         div.store-details_info
-            div.store-details_info_company 안다르
-            div.store-details_info_title [1+1] 에어쿨링 지니 시그니처 레깅스
+            div.store-details_info_company=product.seller
+            div.store-details_info_titley=product.productName
+            //-별점 주기(미구현)
             div.store-details_info_star
                 span 4.8
                 span ⭐⭐⭐⭐⭐
+            div.store-details_info_number
+                div.store-details_info_price=product.price.toLocaleString('en-US')
+                div.store-details_info_discount=`${product.discount}%`
+            hr
             div.store-details_info_delivery
-                div 배송
-                div
+                div.store-details_info_left 배송
+                div.store-details_info_right
                     div 무료배송
-                    div 7월 29일(월) 도착 예정
+                    div.store-details_info_right_date(id='date-display')
                     div 배송사: 멋사택배
                     div 제주도/도서산간지역 3,000원
+            hr
             div.store-details_info_orderAmount
                 div 주문금액
-                div
-                    //-개수 +, - 버튼 추가 예정
-                    div
-                    //-가격*개수 나타낼 예정
-                    div 
+                div.store-details_info_orderAmount-Btn
+                    button.orderAmountBtn#decrease -
+                    div.orderAmountDisplay#counter 0
+                    button.orderAmountBtn#increase +
             div.store-details_info_button
                 input(type="submit" name="cart" value="장바구니")
                 input(type="submit" name="purchase" value="바로구매")

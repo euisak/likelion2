@@ -2,6 +2,7 @@
 @import "./components/header.css";
 @import "./components/reset.css";
 @import "./components/faqIcon.css";
+@import "./components/postmixin.css";
 
 /*화면별*/
 @import "./home.css";
@@ -12,3 +13,5 @@
 @import "./productReg.css";
 @import "./storeDetails.css";
 @import "./join_login.css";
+@import "./post.css";
+@import "./watch.css";

@@ -1,65 +1,40 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">Health in</div>
-        <nav>
-            <a href="#home">홈</a>
-            <a href="#shopping">쇼핑</a>
-            <a href="#challenge">챌린지</a>
-            <a href="#community">커뮤니티</a>
-            <a href="#login">로그인</a>
-            <a href="#signup">회원가입</a>
-        </nav>
-    </header>
-    <main>
-        <div class="faq-section">
-            <button class="faq-category">자주묻는 질문</button>
-            <div class="faq-tabs">
-                <button class="tab-button active">전체</button>
-                <button class="tab-button">주문/결제</button>
-                <button class="tab-button">배송문의</button>
-                <button class="tab-button">취소/교환/반품</button>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="question" onclick="toggleAnswer(this)">[취소/교환/반품] 상품을 교환/반품하고 싶어요. <span class="arrow">▼</span></div>
-                    <div class="answer">상품을 교환하거나 반품하시려면, 상품이 사용되지 않은 상태여야 하며, 원래의 포장 상태를 유지해야 합니다. 교환이나 반품을 원하실 경우, 고객센터로 연락주시거나, 반품 요청 절차를 진행해 주세요. 저희가 자세히 안내드리겠습니다.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="question" onclick="toggleAnswer(this)">[배송문의] 배송은 얼마나 걸리나요? <span class="arrow">▼</span></div>
-                    <div class="answer">배송은 결제 완료 후 3일 이내에 발송되며, 배송에는 일반적으로 7일이 소요됩니다. 다만, 배송 지역에 따라 조금 더 걸릴 수 있습니다. 배송 진행 상황은 주문 확인 이메일을 통해 확인하실 수 있습니다.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="question" onclick="toggleAnswer(this)">[주문/결제] 비회원주문이 가능하나요? <span class="arrow">▼</span></div>
-                    <div class="answer">네, 비회원으로도 주문이 가능합니다. 비회원으로 주문하실 경우, 회원가입 없이도 쉽게 구매하실 수 있습니다. 비회원 주문 시 주문 내역은 이메일로 확인하실 수 있으며, 추가적인 문의 사항은 고객센터로 언제든지 연락 주시면 도움을 드리겠습니다.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="question" onclick="toggleAnswer(this)">[취소/교환/반품] 반품 기준이 어떻게되나요? <span class="arrow">▼</span></div>
-                    <div class="answer">반품은 상품 수령 후 7일 이내에 가능하며, 상품은 사용하지 않은 상태에서 원래 포장 상태로 반품하셔야 합니다. 일부 상품은 반품이 제한될 수 있으니, 반품 요청 전 자세한 기준을 확인해 주세요. 반품 절차에 대한 추가적인 안내는 고객센터에서 도움을 드리겠습니다.</div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script>
-        function toggleAnswer(element) {
-            const answer = element.nextElementSibling;
-            const arrow = element.querySelector('.arrow');
+extends header.pug
 
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                arrow.classList.remove('open');
-            } else {
-                answer.style.display = 'block';
-                arrow.classList.add('open');
-            }
-        }
-    </script>
-</body>
-</html>
+block content
+    .faq-section
+        button.faq-category 자주묻는 질문
+        .faq-tabs
+          button.tab-button.active 전체
+          button.tab-button 주문/결제
+          button.tab-button 배송문의
+          button.tab-button 취소/교환/반품
+        .faq-list
+          .faq-item
+            .question(onclick="toggleAnswer(this)") [취소/교환/반품] 상품을 교환/반품하고 싶어요.
+              span.arrow ▼
+            .answer 상품을 교환하거나 반품하시려면, 상품이 사용되지 않은 상태여야 하며, 원래의 포장 상태를 유지해야 합니다. 교환이나 반품을 원하실 경우, 고객센터로 연락주시거나, 반품 요청 절차를 진행해 주세요. 저희가 자세히 안내드리겠습니다.
+          .faq-item
+            .question(onclick="toggleAnswer(this)") [배송문의] 배송은 얼마나 걸리나요?
+              span.arrow ▼
+            .answer 배송은 결제 완료 후 3일 이내에 발송되며, 배송에는 일반적으로 7일이 소요됩니다. 다만, 배송 지역에 따라 조금 더 걸릴 수 있습니다. 배송 진행 상황은 주문 확인 이메일을 통해 확인하실 수 있습니다.
+          .faq-item
+            .question(onclick="toggleAnswer(this)") [주문/결제] 비회원주문이 가능하나요?
+              span.arrow ▼
+            .answer 네, 비회원으로도 주문이 가능합니다. 비회원으로 주문하실 경우, 회원가입 없이도 쉽게 구매하실 수 있습니다. 비회원 주문 시 주문 내역은 이메일로 확인하실 수 있으며, 추가적인 문의 사항은 고객센터로 언제든지 연락 주시면 도움을 드리겠습니다.
+          .faq-item
+            .question(onclick="toggleAnswer(this)") [취소/교환/반품] 반품 기준이 어떻게되나요?
+              span.arrow ▼
+            .answer 반품은 상품 수령 후 7일 이내에 가능하며, 상품은 사용하지 않은 상태에서 원래 포장 상태로 반품하셔야 합니다. 일부 상품은 반품이 제한될 수 있으니, 반품 요청 전 자세한 기준을 확인해 주세요. 반품 절차에 대한 추가적인 안내는 고객센터에서 도움을 드리겠습니다.
+    script.
+      function toggleAnswer(element) {
+          const answer = element.nextElementSibling;
+          const arrow = element.querySelector('.arrow');
+
+          if (answer.style.display === 'block') {
+              answer.style.display = 'none';
+              arrow.classList.remove('open');
+          } else {
+              answer.style.display = 'block';
+              arrow.classList.add('open');
+          }
+      }

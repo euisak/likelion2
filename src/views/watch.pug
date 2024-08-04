@@ -1,0 +1,85 @@
+extends header.pug
+
+block content
+    div.watch-community
+        div.watch-community_head
+            div.watch-community_head_prefix=`커뮤니티 > ${post.prefix}`
+            div.watch-community_head_title #{post.title}
+            div.watch-community_head_writer #{post.writer.username}
+            div.watch-community_head_date-views=`${formattedPostDate} | 조회수 ${post.meta.views}`
+        div.watch-community_content!= post.content
+        div.watch-community_bottom
+            div.watch-community_bottom_like-comments
+                button(onclick="likePost()")
+                    div
+                        span 👍
+                        span #{post.meta.like}
+                div
+                    span 💬
+                    span #{post.comments.length}
+            div.watch-community_bottom_edit-delete
+                if loggedInUser
+                    if String(post.writer._id) === String(loggedInUser._id)
+                        div
+                            a(href=`/post/${post._id}/edit`) 수정
+                        div
+                            a(href=`/post/${post._id}/delete`) 삭제
+
+        //-댓글 섹션
+        div.watch-comment
+            span 댓글
+            //-댓글 추가 폼
+            div.watch-comment_add
+                form(action=`/post/${post._id}/comment`, method="post")
+                    div
+                        input(type="text", name="author", value=`${loggedInUser.username}`, readonly)
+                    div.watch-comment_add_textarea
+                        textarea(name="content", placeholder="댓글을 작성해주세요.", required)
+                        button(type="submit") 등록
+            ul#comments.watch-comment_content
+                each comment in post.comments
+                    li.watch-comment_content_set
+                        div.watch-comment_content_authorCreateAt
+                            strong.watch-comment_content_authorCreateAt= `${comment.author} | ${comment.formattedCreatedAt}`
+                            if loggedInUser
+                                if String(post.writer._id) === String(loggedInUser._id)
+                                    div.watch-comment_content_authorCreateAt_button
+                                        button(type="button", onclick=`toggleEditForm('${comment._id}')`) 수정
+                                        //-댓글 삭제 폼
+                                        form(action=`/post/${post._id}/comment/${comment._id}/delete`, method="post")
+                                            button(type="submit") 삭제
+                        p.watch-comment_content_text= comment.content
+                        div
+                            //-댓글 수정 폼
+                            form(action=`/post/${post._id}/comment/${comment._id}/edit`, method="post", id=`edit-form-${comment._id}`, class="edit-form", style="display:none;")
+                                textarea(name="content", required)= comment.content
+                                button(type="submit") Edit Comment
+
+
+        block scripts
+            script.
+                const postId = '#{post._id}';
+
+                function likePost() {
+                    fetch(`/post/${postId}/like`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(response => {
+                        if(response.ok) {
+                            location.reload(); // 페이지 새로고침
+                        } else {
+                            console.error('Failed to increase likes.');
+                        }
+                    }).catch(error => console.error('Error:', error));
+                }
+
+                function toggleEditForm(commentId) {
+                    const form = document.getElementById(`edit-form-${commentId}`);
+                    if (form.style.display === "none") {
+                        form.style.display = "block";
+                    } else {
+                        form.style.display = "none";
+                    }
+                }

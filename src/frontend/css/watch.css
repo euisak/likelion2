@@ -1,0 +1,140 @@
+.watch-community{
+    margin-top: 50px;
+    padding: 0px 100px;
+}
+.watch-community_head_prefix{
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+.watch-community_head_title{
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    padding: 25px 0px;
+}
+.watch-community_head_writer{
+    font-size: 15px;
+    color: #ff7f3e;
+}
+.watch-community_head_date-views{
+    color: rgb(189, 189, 189);
+    font-size: 15px;
+    padding: 5px 0px;
+}
+.watch-community_content{
+    border-top: solid 1px rgb(184, 184, 184);
+    margin-top: 10px;
+    padding: 30px 0px;
+    height: auto;
+    font-size: 16px;
+}
+.watch-community_bottom{
+    border-top: solid 1px rgb(184, 184, 184);
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.watch-community_bottom_like-comments{
+    display: flex;
+    align-items: center;
+    padding: 0px 5px;
+}
+.watch-community_bottom_like-comments button{
+    border: none;
+    background: none;
+    margin-right: 10px;
+    font-size: 16.5px;
+}
+.watch-community_bottom_like-comments button:hover{
+    cursor: pointer;
+}
+.watch-community_bottom_edit-delete{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+.watch-community_bottom_edit-delete a{
+    color: rgb(184, 184, 184);
+    padding: 0px 5px;
+}
+.watch-comment{
+    margin-top: 30px;
+}
+.watch-comment>span{
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+.watch-comment_add{
+    margin: 10px 0px 20px 0px;
+    padding: 0px 10px;
+}
+.watch-comment_add input{
+    border: none;
+    background: none;
+    width: auto;
+    font-size: 13px;
+    color: rgb(149, 149, 149);
+}
+.watch-comment_add_textarea{
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+.watch-comment_add_textarea textarea{
+    width: 90%;
+    height: 50px;
+    overflow: auto;
+    margin-right: 10px;
+    resize: none;
+}
+.watch-comment_add_textarea button{
+    width: 10%;
+    height: 55px;
+    background-color: #ff7f3e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.watch-comment_add_textarea button:hover{
+    cursor: pointer;
+    background-color: #bf5e2d;
+}
+.watch-comment_content{
+    padding: 10px;
+}
+.watch-comment_content li{
+    margin-bottom: 15px;
+    border-bottom: solid 1px rgb(184, 184, 184);
+}
+.watch-comment_content_authorCreateAt{
+    display: flex;
+    justify-content: space-between;
+}
+.watch-comment_content_authorCreateAt{
+    font-size: 13px;
+    color: rgb(149, 149, 149);
+}
+.watch-comment_content_authorCreateAt_button{
+    display: flex;
+}
+.watch-comment_content_authorCreateAt_button button{
+    border: none;
+    background: none;
+    color: rgb(149, 149, 149);
+    font-size: 13px;
+}
+.watch-comment_content_authorCreateAt_button button:hover{
+    cursor: pointer;
+}
+.watch-comment_content_text{
+    padding: 7px 0px;
+    font-size: 16px;
+    color: black;
+}

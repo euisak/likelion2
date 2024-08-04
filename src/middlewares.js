@@ -15,3 +15,11 @@ export const storemulterMiddleware = multer({
     dest: "uploads/store/",
 });
 
+//[로그인된 유저만 특정 기능을 사용할 수 있도록 하는 미들웨어]
+export const protectorMiddleware = (req, res, next) => {
+    if(req.session.loggedIn){
+        next();
+    }else{
+        return res.redirect("/login");
+    }
+}

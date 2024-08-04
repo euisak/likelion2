@@ -1,0 +1,8 @@
+mixin post(post)
+  div.postmixin
+    a.postmixin_head(href=`/post/${post.id}`)
+      div.postmixin_head_prefix
+        span=`[${post.prefix}] `
+      div.postmixin_head_title #{post.title}
+      span=`👍${post.meta.like}`
+    small= post.toFormattedDate()  

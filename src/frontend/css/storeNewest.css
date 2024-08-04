@@ -41,13 +41,16 @@
   font-weight: 600;
   font-size: 23px;
 }
+
+/*업데이트 일자*/
 .store-new-date{
   font-size: 15px;
   color: rgb(171, 171, 171);
   margin-bottom: 20px;
 }
+
 /*상품 목록*/
-.store-new-item{
+.store-new-product{
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 1fr));
   gap: 20px;
@@ -68,7 +71,7 @@
   color: rgb(188, 188, 188);
 }
 .store-new-item_set_info div:nth-child(2){
-  margin: 5px 0px;
+  margin-top: 5px;
   font-size: 18px;
   color: #2f3438;
   line-height: 130%;
@@ -87,4 +90,11 @@
   font-size: 25px;
   color:#2f3438;
   font-weight: 600;
+}
+.store-new-item_set_img{
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
