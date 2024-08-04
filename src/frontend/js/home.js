@@ -83,4 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateSlider();
     setInterval(nextSlide, 4000);
+<<<<<<< HEAD
   });
+=======
+  });
+>>>>>>> 1e458b7a25ed3153b5ef817c98ded00b3959e9dd

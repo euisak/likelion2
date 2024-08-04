@@ -9,8 +9,20 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.19.2",
     "morgan": "^1.10.0",
+=======
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "fullcalendar": "^6.1.15",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+>>>>>>> 1e458b7a25ed3153b5ef817c98ded00b3959e9dd
     "pug": "^3.0.3"
   },
   "devDependencies": {

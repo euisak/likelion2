@@ -5,6 +5,16 @@
 
 /*화면별*/
 @import "./home.css";
+<<<<<<< HEAD
 @import "./storeBest.css";
 @import "./storeFashion.css";
 @import "./faq.css";
+=======
+@import "./storeNewest.css";
+@import "./storeFashion.css";
+@import "./faq.css";
+@import "./mySales.css";
+@import "./productReg.css";
+@import "./storeDetails.css";
+@import "./join_login.css";
+>>>>>>> 1e458b7a25ed3153b5ef817c98ded00b3959e9dd

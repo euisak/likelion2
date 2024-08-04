@@ -1,0 +1,37 @@
+doctype html
+html(lang="ko")
+    head
+        title #{pageTitle} | Health in
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+        link(rel="stylesheet", href="/frontend/css/style.css")
+    body
+        div.join
+            div.join_img
+                a(href="/")
+                    img(src="/image/logo.jpg")
+            div.join_form
+                form(method="POST")
+                    if userErrorMessage
+                        span.join-error-message=userErrorMessage
+                    input.join_form_box(name="userId", type="text", placeholder="아이디", required)
+                    if pwErrorMessage
+                        span.join-error-message=pwErrorMessage
+                    input.join_form_box(name="userPw", type="password", placeholder="비밀번호", required)
+                    input.join_form_box(name="userPwCheck", type="password", placeholder="비밀번호 확인", required)
+                    div.joinLine
+                    input.join_form_box(name="username", type="text", placeholder="이름", required)
+                    if emailErrorMessage
+                        span.join-error-message=emailErrorMessage
+                    input.join_form_box(name="email", type="email", placeholder="[선택] 이메일")
+                    div.join_form_radio
+                        div.join_form_radio-title
+                            span 가입 유형 선택
+                        div.join_form_radio-input
+                            label
+                                input(type="radio", name="userType", value="구매자", required)
+                                | 구매자(일반 회원)
+                            label 
+                                input(name="userType" type="radio" value="판매자")
+                                | 판매자
+                    input.join_form_button(type="submit", value="회원가입")

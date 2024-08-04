@@ -32,6 +32,7 @@
   .home-header_right {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
   }
   .home-header_right div{
     width: 70px;
@@ -40,6 +41,18 @@
     margin-left: 18px;
   }
   .home-header_right div:hover{
+=======
+    justify-content: end;
+    width: 500px;
+  }
+  .header-login a{
+    width: 70px;
+    font-size: 15px;
+    color: #2f3438;
+    margin-left: 10px;
+  }
+  .home-header_right a:hover{
+>>>>>>> 1e458b7a25ed3153b5ef817c98ded00b3959e9dd
     cursor: pointer;
   }
   .home-header-line{
@@ -47,3 +60,37 @@
     height: 1px;
     background-color: #ff7f3e;
   }
+<<<<<<< HEAD
+=======
+  .header-login{
+    width: 500px;
+    display: flex;
+    justify-content: end;
+  }
+  .header-profile{
+    display: flex;
+    align-items: center;
+    width: 500px;
+  }
+  .header-profile a:first-child{
+    width: 420px;
+    display: flex;
+    justify-content: end;
+  }
+  .header-profile a:last-child{
+    width: 80px;
+    display: flex;
+    justify-content: end;
+    font-size: 15px;
+    color: #2f3438;
+  }
+  .header-profile span{
+    font-size: 17px;
+    color: #2f3438;
+  }
+  .header-profile span:first-child{
+    font-weight: 600;
+    color: black;
+    text-decoration: underline;
+  }
+>>>>>>> 1e458b7a25ed3153b5ef817c98ded00b3959e9dd
