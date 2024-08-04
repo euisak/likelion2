@@ -56,7 +56,7 @@ export const postProductReg = async(req,res)=> {
         const user = await User.findById(id);
         user.products.push([newProduct._id]);
         await user.save();
-        return res.redirect("/store/newest");
+        return res.redirect("/newest");
     }catch(error){
         console.log(error);
         return res.status(400).render("productReg", {pageTitle: "상품 등록"});
@@ -73,3 +73,4 @@ export const mySales = async (req,res) => {
     }
     return res.render("mySales", {pageTitle: "나의 판매", user});
 }
+

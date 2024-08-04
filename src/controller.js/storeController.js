@@ -20,6 +20,12 @@ export const storeEquipment = (req,res)=> {
 export const storeFood = (req,res)=> {
     return res.render("storeFood", {pageTitle: "쇼핑 | 식품"});
 }
-export const storeDetails = (req,res)=> {
-    return res.render("storeDetails", {pageTitle: "상품상세"});
+export const storeDetails = async (req,res)=> {
+    const id = req.params.id;
+    const product = await Store.findById(id);
+    const productImage = product.productImage.map(product => {return product});
+    if(!product){
+        return res.status(404).render("404", {pageTitle: "404"});
+    }
+    return res.render("storeDetails", {pageTitle: product.productName, product, productImage});
 }

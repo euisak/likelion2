@@ -7,7 +7,7 @@ const storeSchema = new mongoose.Schema({
     price: {type: Number, required: true},
     discount: {type: Number},
     thumbnail: {type: String, required: true},
-    productImage: [{type: String}],
+    productImage: [{type: String, required: true}],
     productDescription: {type: String, required: true},
     createdAt: {type: String,  required: true},
     owner: {type: mongoose.Schema.Types.ObjectId, ref: "User", required: true}

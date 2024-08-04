@@ -34,13 +34,13 @@ app.set("view engine", "pug");//html대신 pug사용
 app.set("views", process.cwd() + "/src/views");
 
 app.use(express.static(path.join(process.cwd(), "src/public")));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(morgan("dev"));
 app.use(express.static(process.cwd() + "/src"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(localsMiddleware);
+app.use("/uploads", express.static("uploads"));
 app.use("/", centerRouter);
 app.use("/user", userRouter);
 app.use("/store", storeRouter);
