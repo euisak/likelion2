@@ -1,0 +1,23 @@
+doctype html
+html(lang="ko")
+    head
+        title #{pageTitle} | Health in
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+        link(rel="stylesheet", href="/frontend/css/style.css")
+    body
+        div.login
+            div.login-title
+                a(href="/")
+                    img(src="/image/logo.jpg")
+            div.login-form
+                form(method="POST")
+                    if userIdErrorMessage
+                        span.login-error-message=userIdErrorMessage
+                    input.login_form_box(name="userId", type="text", placeholder="아이디", required)
+                    if userPwErrorMessage
+                        span.login-error-message=userPwErrorMessage
+                    input.login_form_box(name="userPw", type="password", placeholder="비밀번호", required)
+                    input.login_form_botton(type="submit", value="로그인")
+                    div.login-form-join
+                        a(href="/join") 회원가입

@@ -4,9 +4,8 @@ block content
         div.monthly-news
             div
                 div.monthly-news_title 이달의 소식
-                div.monthly-news_day
-            //-달력API 삽입 예정
-            div
+        div.calendar-container
+            #calendar
         div.best-product
             div.best-product_title 베스트 상품
             div.best-product_menu
@@ -150,7 +149,14 @@ block content
                     span.indicator(data-index="3")
             div.popularPosts
                 div.popularPosts_title 인기 게시물🔥
-                //-게시물 리스트 입력
+                div.top-posts
+                    ul 
+                        each post in top5Contents 
+                            li.top-posts_list
+                                small.top-posts_list_category [#{post.prefix}]
+                                div.top-posts_list_title-like
+                                    a.top-posts_list_title(href=`/post/${post._id}`) #{post.title}
+                                    small.top-posts_list_like 👍#{post.meta.like}
         div.other-information
             div.other-information_text
                 div 이용약관 | 개인정보 처리방침 | 공지사항

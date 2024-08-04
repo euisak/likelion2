@@ -1,6 +1,5 @@
 /*이달의 소식*/
 .monthly-news{
-  display: flex;
   margin-top: 20px;
 }
 .monthly-news div:first-child{
@@ -13,13 +12,6 @@
   color: #2f3438;
   margin: 15px 0px 25px 0px;
 }
-.monthly-news_day{
-  font-size: 18px;
-  font-weight: 600;
-  color: #616467;
-  margin: 15px 0px 25px 5px;
-}
-
 /*베스트 상품*/
 .best-product{
   margin-top: 30px;
@@ -192,4 +184,33 @@
   height: 25px;
   width: 25px;
   margin-right: 10px;
+}
+
+/*인기게시물*/
+.top-posts_list{
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.top-posts_list_category{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 17px;
+  padding: 3px;
+  margin-right: 10px;
+  font-size: 12px;
+  background-color: white;
+  color: #94969b;
+  border: solid 1px #eeeeee;
+}
+.top-posts_list_title-like{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.top-posts_list_title{
+  color: black;
+  font-size: 15px;
 }

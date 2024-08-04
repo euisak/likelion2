@@ -1,49 +1,82 @@
 /*상단바*/
 .home-header{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-  .home-header_left{
-    display: flex;
-    align-items: center;
-  }
-  .home-header_left img{
-    height: 45px;
-    width: 165px;
-  }
-  .home-header_left a{
-    text-align: center;
-    font-size: 19px;
-    font-weight: 600;
-    color: #2f3438;
-  }
-  .home-header_left a.active{
-    color: #ff7f3e;
-  }
-  .home-header_left a span{
-    display: inline-block;
-    width: 100px;
-  }
-  .home-header_left a:hover{
-    color: #ff7f3e;
-    cursor: pointer;
-  }
-  .home-header_right {
-    display: flex;
-    align-items: center;
-  }
-  .home-header_right div{
-    width: 70px;
-    font-size: 17px;
-    color: #2f3438;
-    margin-left: 18px;
-  }
-  .home-header_right div:hover{
-    cursor: pointer;
-  }
-  .home-header-line{
-    width: 100%;
-    height: 1px;
-    background-color: #ff7f3e;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.home-header_left{
+  display: flex;
+  align-items: center;
+}
+.home-header_left img{
+  height: 45px;
+  width: 165px;
+}
+.home-header_left a{
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+  color: #2f3438;
+}
+.home-header_left a.active{
+  color: #ff7f3e;
+}
+.home-header_left a span{
+  display: inline-block;
+  width: 100px;
+}
+.home-header_left a:hover{
+  color: #ff7f3e;
+  cursor: pointer;
+}
+.home-header_right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 500px;
+}
+.header-login a{
+  width: 70px;
+  font-size: 15px;
+  color: #2f3438;
+  margin-left: 10px;
+}
+.home-header_right a:hover{
+  cursor: pointer;
+}
+.home-header-line{
+  width: 100%;
+  height: 1px;
+  background-color: #ff7f3e;
+}
+.header-login{
+  width: 500px;
+  display: flex;
+  justify-content: end;
+}
+.header-profile{
+  display: flex;
+  align-items: center;
+  width: 500px;
+}
+.header-profile a:first-child{
+  width: 420px;
+  display: flex;
+  justify-content: end;
+}
+.header-profile a:last-child{
+  width: 80px;
+  display: flex;
+  justify-content: end;
+  font-size: 15px;
+  color: #2f3438;
+}
+.header-profile span{
+  font-size: 17px;
+  color: #2f3438;
+}
+.header-profile span:first-child{
+  font-weight: 600;
+  color: black;
+  text-decoration: underline;
+}

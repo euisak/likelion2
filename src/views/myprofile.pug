@@ -1,0 +1,23 @@
+extends header.pug
+
+block content
+    div.adminPage-Title
+        div 마이페이지
+    div.adminPage-content
+        div.adminPage-content_left
+            a(href=`/user/${user._id}`)
+                div.adminPage-content_myprofile
+                    span 마이페이지
+                    span 
+                        i(class="fa-solid fa-chevron-right")
+            a(href=`/user/${user._id}/mySales`)
+                div.adminPage-content_mySales
+                    span 나의 판매
+                    span 
+                        i(class="fa-solid fa-chevron-right")
+            a(href=`/user/${user._id}/productReg`)
+                div.adminPage-content_productReg
+                    span 상품 등록
+                    span 
+                        i(class="fa-solid fa-chevron-right")
+        div.adminPage-content_right

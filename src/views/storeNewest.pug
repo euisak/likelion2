@@ -1,0 +1,23 @@
+extends header.pug
+include mixins/store
+
+block content
+    div.headerbar-sub
+        ul.headerbar-sub_list
+            a(href="/store/newest")
+                li 최신 상품
+            a(href="/store/fashion")
+                li 패션
+            a(href="/store/equipment")
+                li 기구
+            a(href="/store/food")
+                li 식품
+    div.home-header-line
+    div.stroe-new
+        div 최신 상품
+    div.store-new-date
+    div.store-new-product
+        each product in products
+            +product(product)
+        else
+            li 등록된 상품이 없습니다.

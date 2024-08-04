@@ -1,0 +1,30 @@
+.upload-community{
+    padding: 20px 0px;
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+.upload-community li{
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    background-color: #ff7f3e;
+}
+.upload-community li:hover{
+    cursor: pointer;
+    background-color: #c15f2e;
+}
+.upload-community li a{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+.upload-community-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
