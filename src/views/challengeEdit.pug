@@ -1,0 +1,53 @@
+extends header.pug
+
+block content
+  h1 #{pageTitle}
+  form(action=`/challenge/${challenge._id}/edit` method="POST")
+    input(type="text", name="title", value=challenge.title, required)
+    input(type="text", name="prefix", value=challenge.prefix, required)
+    // Hidden description input moved outside of editor-container
+    input(type="hidden", name="description", id="hidden-description", value=challenge.description || '')
+    div#editor-container
+    input(type="date", name="startDate", value=challenge.startDate.toISOString().slice(0, 10), required)
+    input(type="date", name="endDate", value=challenge.endDate.toISOString().slice(0, 10), required)
+    button(type="submit") 수정
+
+block scripts
+  script(src="https://cdn.quilljs.com/1.3.6/quill.js")
+  link(rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css")
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      var quill = new Quill('#editor-container', {
+        theme: 'snow',
+        modules: {
+          toolbar: [
+            [{ 'header': '1' }, { 'header': '2' }],
+            ['bold', 'italic', 'underline'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'script': 'sub' }, { 'script': 'super' }],
+            [{ 'indent': '-1' }, { 'indent': '+1' }],
+            [{ 'direction': 'rtl' }],
+            ['link', 'image'],
+            ['clean']
+          ]
+        }
+      });
+
+      // Set Quill's content from the hidden input
+      var hiddenDescription = document.getElementById('hidden-description');
+      if (hiddenDescription) {
+        quill.root.innerHTML = hiddenDescription.value || '';
+      } else {
+        console.log('Hidden description input not found');
+      }
+
+      // Ensure the hidden description field is updated with Quill editor content
+      document.querySelector('form').addEventListener('submit', function(event) {
+        if (hiddenDescription) {
+          hiddenDescription.value = quill.root.innerHTML;
+          console.log('Updated hidden description value:', hiddenDescription.value);
+        } else {
+          console.log('Hidden description field not found');
+        }
+      });
+    });

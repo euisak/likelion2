@@ -1,6 +1,5 @@
 import User from "../models/User";
-import Post from "../models/post";
-import Store from "../models/Store";
+import Post from '../models/PostModel';
 import bcrypt from "bcrypt";
 
 //[홈]

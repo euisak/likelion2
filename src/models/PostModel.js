@@ -1,19 +1,12 @@
 import mongoose from "mongoose";
 
-const commentSchema = new mongoose.Schema({
-  author: String,
-  content: String,
-  createdAt: { type: Date, default: Date.now },
-  _id: mongoose.Schema.Types.ObjectId
-});
-
 const postSchema = new mongoose.Schema({
   prefix: { type: String, required: true },
   title: { type: String, required: true, trim: true, maxLength: 50 },
-  writer: { type:mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  writer: { type: String, required: true },
+  userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' }, // userId
   createdAt: { type: Date, required: true, default: Date.now },
   content: { type: String, required: true, trim: true },
-  comments: [commentSchema],
   meta: {
     views: { type: Number, default: 0, required: true },
     like: { type: Number, default: 0, required: true }
@@ -30,12 +23,10 @@ postSchema.methods.toFormattedDate = function() {
     minute: '2-digit',
     hour12: false,
   };
-  
   const date = new Date(this.createdAt);
   const formattedDate = date.toLocaleString('ko-KR', options)
     .replace(',', '')
     .replace(/\//g, '.');
-  
   return formattedDate;
 };
 
