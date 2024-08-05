@@ -2,6 +2,7 @@
   "name": "likelion",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "nodemon --exec babel-node src/server.js"
   },
