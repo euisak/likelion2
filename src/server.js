@@ -9,6 +9,7 @@ import centerRouter from "./routers/centerRouter";
 import userRouter from "./routers/userRouter";
 import storeRouter from "./routers/storeRouter";
 import postRouter from "./routers/postRouter";
+import challengeRouter from "./routers/challengeRouter";
 import {localsMiddleware} from "./middlewares";
 
 import "./models/User";
@@ -45,6 +46,7 @@ app.use("/", centerRouter);
 app.use("/user", userRouter);
 app.use("/store", storeRouter);
 app.use("/post", postRouter);
+app.use("/challenge", challengeRouter);
 
 
 const handleListening = () => console.log(`Server listenting on port http://localhost:${PORT} 🔥`);

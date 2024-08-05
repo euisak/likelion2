@@ -1,0 +1,83 @@
+extends header.pug
+
+block content
+  // 챌린지 내용 및 메타데이터 출력
+  div
+    != challenge.description
+    small 작성자: #{challenge.writer}
+    br
+    small 기간: #{new Date(challenge.startDate).toLocaleDateString()} - #{new Date(challenge.endDate).toLocaleDateString()}
+    br
+    small(id="participants-count") 참여자 수: #{challenge.meta.participants}
+    br
+    small 댓글 개수: #{comments.length}
+    br
+    // 참여하기 버튼 (클릭 후 비활성화)
+    button(id="participate-btn", onclick="participateChallenge()") 참여하기
+    a(href=`/challenge/${challenge._id}/edit`) Edit Challenge &rarr;
+    br
+    a(href=`/challenge/${challenge._id}/delete`) Delete Challenge &rarr;
+
+  // 댓글 섹션
+  h2 댓글
+  ul#comments
+    each comment in comments
+      li
+        strong= comment.author
+        p!= comment.content ? comment.content.replace(/\n/g, '<br>') : 'No content available'
+        small 작성일: #{comment.formattedCreatedAt || 'Date not available'}
+        // 댓글 수정 폼
+        form(action=`/challenge/${challenge._id}/comment/${comment._id}/edit`, method="post", id=`edit-form-${comment._id}`, class="edit-form", style="display:none;")
+          textarea(name="content", required)= comment.content
+          button(type="submit") Edit Comment
+        // 댓글 수정 버튼
+        button(type="button", onclick=`toggleEditForm('${comment._id}')`) Edit Comment
+        // 댓글 삭제 폼
+        form(action=`/challenge/${challenge._id}/comment/${comment._id}/delete`, method="post")
+          button(type="submit") Delete Comment
+    // 댓글 추가 폼
+    form(action=`/challenge/${challenge._id}/comment`, method="post")
+      textarea(name="content", placeholder="Your Comment", required)
+      button(type="submit") Add Comment
+
+  block scripts
+  script.
+    const challengeId = '#{challenge._id}';
+
+    function participateChallenge() {
+      fetch(`/challenge/${challengeId}/participate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin' // 세션 쿠키를 포함하여 요청
+      }).then(response => {
+        if (response.redirected) {
+          window.location.href = response.url;
+        } else if (response.ok) {
+          return response.json();
+        } else {
+          console.error('Failed to participate in challenge.');
+        }
+      }).then(data => {
+        if (data) {
+          const participantsCountElement = document.querySelector('#participants-count');
+          if (participantsCountElement) {
+            participantsCountElement.textContent = `참여자 수: ${data.participantsCount}`;
+          }
+          // 버튼 비활성화
+          const participateButton = document.getElementById('participate-btn');
+          if (participateButton) {
+            participateButton.disabled = true;
+            participateButton.textContent = '이미 참여했습니다';
+          }
+        }
+      }).catch(error => console.error('Error:', error));
+    }
+
+    function toggleEditForm(commentId) {
+      const form = document.getElementById(`edit-form-${commentId}`);
+      if (form) {
+        form.style.display = (form.style.display === "none") ? "block" : "none";
+      }
+    }

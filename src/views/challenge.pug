@@ -1,0 +1,29 @@
+extends header.pug
+
+block content
+    div.challenge-view
+        div.challenge-title
+            span 챌린지
+        nav
+            ul.challenge-list
+                li
+                    a(href="/challenge?category=전체") 전체
+                li
+                    a(href="?category=생활습관") 생활습관
+                li
+                    a(href="?category=운동") 운동
+                li
+                    a(href=`?category=${selectedCategory}&status=진행중`) 진행중
+                li
+                    a(href=`?category=${selectedCategory}&status=완료`) 완료
+        div.challenge-content
+            if challenges.length
+                each challenge in challenges
+                    div
+                        h2.challenge-content-set
+                        a(href=`/challenge/${challenge._id}`)= challenge.prefix + " " + challenge.title
+                            div!= challenge.description
+                            div= `참여자 수: ${challenge.meta.participants}`
+                            div= `기간: ${new Date(challenge.startDate).toLocaleDateString()} - ${new Date(challenge.endDate).toLocaleDateString()}`
+            else
+                p 등록된 챌린지가 없습니다.🏃‍♀️‍➡️
