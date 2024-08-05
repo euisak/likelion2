@@ -12,6 +12,8 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     products: [{type: mongoose.Schema.Types.ObjectId, ref: "Store"}],
+    likedPosts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
+    participatedChallenges: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Challenge' }], // 사용자가 참여한 챌린지 ID 목록
 });
 
 userSchema.pre("save", async function() {
