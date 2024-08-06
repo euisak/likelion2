@@ -24,6 +24,7 @@
     "quill": "^2.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.8",
     "@babel/core": "^7.24.8",
     "@babel/node": "^7.24.8",
     "@babel/preset-env": "^7.24.8",
